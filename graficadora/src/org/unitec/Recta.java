@@ -30,31 +30,19 @@ public class Recta extends Canvas{
         int y = -getHeight()/2;
         
         //Estas variables servirán para indicar el primer punto
-        float xP1 = -getWidth()/2;
+        float xP1 = (-getWidth()/2)/30;
         float yP1;
         
         //Estas variables servirán para indicar el segundo punto
-        float xP2 = -getWidth()/2 + 1;
+        float xP2 = (-getWidth()/2 + 1)/30;
         float yP2;
         
         //Multiplicamos por 30 para mover la recta en 1 cm por 30 pixeles
+        a *= 30;
         b *= 30;
         
-        //Para graficar usamos el ciclo for
+        //Graficamos la cuadricula y la recta
         for(int i = 0; i < getWidth(); i++){
-            //Sustituyendo en el primer punto la ecuación
-            yP1 = -(a * xP1 + b);
-            
-            //Sustituyendo el segundo punto en la ecuación
-            yP2 = -(a * xP2 + b);
-            
-            //Dibujamos la gráfica
-            g.drawLine((int)xP1, (int)yP1, (int)xP2, (int)yP2);
-            
-            //Incrementamos el valor de x para el punto 1 y 2
-            xP1++;
-            xP2++;
-            
             //Nos desplazamos en el eje de X y Y para la cuadrícula
             x++;
             y++;
@@ -72,6 +60,19 @@ public class Recta extends Canvas{
                 g.drawLine(getWidth()/2 + (-getWidth()/2) + 5, y, getWidth()/2 + (-getWidth()/2) + 5 - 10, y);
                 g.drawString(num, getWidth()/2 + (-getWidth()/2) + 10 , y + 4);
             }
+            
+            //Sustituyendo en el primer punto la ecuación
+            yP1 = -(a * xP1 + b)/30;
+            
+            //Sustituyendo el segundo punto en la ecuación
+            yP2 = -(a * xP2 + b)/30;
+            
+            //Dibujamos la gráfica
+            g.drawLine((int)xP1, (int)yP1, (int)xP2, (int)yP2);
+            
+            //Incrementamos el valor de x para el punto 1 y 2
+            xP1++;
+            xP2++;
         }
     }
 }
