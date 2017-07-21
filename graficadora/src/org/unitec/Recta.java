@@ -59,14 +59,14 @@ public class Recta extends Canvas{
             x++;
             y++;
             
-            //Se dibuja una linea cada 30 pixeles desplazados en el eje de X
+            //Se dibuja una linea e inserta número cada 30 pixeles desplazados en el eje de X
             if(x % 30 == 0 && x / 30 != 0){
                 String num = String.valueOf(x/30);
                 g.drawLine(x, getHeight()/2 + (-getHeight()/2) + 5, x, getHeight()/2 + (-getHeight()/2) + 5 - 10);
                 g.drawString(num, x - 2, getHeight()/2 + (-getHeight()/2) + 16);
             }
             
-            //Se dibuja una linea cada 30 pixeles desplazados en el eje de Y
+            //Se dibuja una linea e inserta número cada 30 pixeles desplazados en el eje de Y
             if(y % 30 == 0 && y / 30 != 0){
                 String num = String.valueOf(y/30);
                 g.drawLine(getWidth()/2 + (-getWidth()/2) + 5, y, getWidth()/2 + (-getWidth()/2) + 5 - 10, y);
