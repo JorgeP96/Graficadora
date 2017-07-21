@@ -301,13 +301,13 @@ public final class PrincipalTopComponent extends TopComponent {
         //PanelGraficaRecta.removeAll();
         
         try{
-            int elementA = Integer.parseInt(txtParabolaA.getText());
-            int elementB = Integer.parseInt(txtParabolaB.getText());
-            int elementC = Integer.parseInt(txtParabolaC.getText());
+            float a = Float.parseFloat(txtParabolaA.getText());
+            float b = Float.parseFloat(txtParabolaB.getText());
+            float c = Float.parseFloat(txtParabolaC.getText());
             
-            parabola.a = elementA;
-            parabola.b = elementB;
-            parabola.c = elementC;
+            parabola.a = a;
+            parabola.b = b;
+            parabola.c = c;
             
             parabola.repaint();
         } catch (NumberFormatException e){
@@ -318,11 +318,11 @@ public final class PrincipalTopComponent extends TopComponent {
     private void btnGraficarRectaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGraficarRectaActionPerformed
         // TODO add your handling code here:
         try{
-            int elementA = Integer.parseInt(txtA.getText());
-            int elementB = Integer.parseInt(txtB.getText());
+            float a = Float.parseFloat(txtA.getText());
+            float b = Float.parseFloat(txtB.getText());
 
-            Recta.a = elementA;
-            Recta.b = elementB;
+            Recta.a = a;
+            Recta.b = b;
 
             recta.repaint();
         } catch (NumberFormatException e){
