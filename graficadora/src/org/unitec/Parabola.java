@@ -1,14 +1,13 @@
 package org.unitec;
 
 import java.awt.*;
-import javax.swing.JOptionPane;
 
 public class Parabola extends Canvas{
     
     public static float a;
     public static float b;
     public static float c;
-
+    
     @Override
     public void paint(Graphics g) {
         //Cambiamos color
