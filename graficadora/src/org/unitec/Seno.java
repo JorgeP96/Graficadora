@@ -2,10 +2,11 @@ package org.unitec;
 
 import java.awt.*;
 
-public class Recta extends Canvas{
+public class Seno extends Canvas{
 
     public static float a;
     public static float b;    
+    public static float c;  
     
     @Override
     public void paint(Graphics g) {
@@ -40,6 +41,7 @@ public class Recta extends Canvas{
         //Multiplicamos por 30 para mover la recta en 1 cm por 30 pixeles
         a *= 30;
         b *= 30;
+        c *= 30;
         
         //Graficamos la cuadricula y la recta
         for (int i = 0; i < getWidth(); i++){
@@ -94,10 +96,15 @@ public class Recta extends Canvas{
             //Se hace la gráfica si alguno de los valores es diferente de 0
             if(a != 0 || b != 0){
                 //Sustituyendo en el primer punto la ecuación
-                yP1 = -(a * xP1 + b)/30;
-
+                //yP1 = a *(float)Math.sin(b * xP1);
+                //yP1 = -(a *(float)Math.sin(Math.toRadians((xP1*b)))) - c;
                 //Sustituyendo el segundo punto en la ecuación
-                yP2 = -(a * xP2 + b)/30;
+                //yP2 = -(a *(float)Math.sin(Math.toRadians((xP2*b)))) - c;
+                
+                
+                yP1 = -(a *(float)Math.sin(Math.toRadians((xP1/15)*b))) - c;
+                yP2 = -(a *(float)Math.sin(Math.toRadians((xP2/15)*b))) - c;
+                
                 
                 //Cambiamos color
                 g.setColor(Color.red);

@@ -32,17 +32,17 @@ import org.openide.util.NbBundle.Messages;
     "HINT_PrincipalTopComponent=This is a Principal window"
 })
 public final class PrincipalTopComponent extends TopComponent {
-    Recta recta;
-    Parabola parabola;
+    Recta recta = new Recta();
+    Parabola parabola = new Parabola();
+    Hiperbola hiperbola = new Hiperbola();
+    Seno seno = new Seno();
     
     public PrincipalTopComponent() {
         initComponents();
         setName(Bundle.CTL_PrincipalTopComponent());
         setToolTipText(Bundle.HINT_PrincipalTopComponent());
         
-        //Agui indicamos al panel grafica que se agregará el Canvas
-        recta = new Recta();
-        parabola = new Parabola();
+        PanelGrafica.add(recta);
     }
 
     /**
@@ -76,7 +76,23 @@ public final class PrincipalTopComponent extends TopComponent {
         txtParabolaC = new javax.swing.JTextField();
         jLabel6 = new javax.swing.JLabel();
         jPanel4 = new javax.swing.JPanel();
+        txtAHiperbola = new javax.swing.JTextField();
+        lblEcuacionRecta2 = new javax.swing.JLabel();
+        lblY2 = new javax.swing.JLabel();
+        txtBHiperbola = new javax.swing.JTextField();
+        jLabel5 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
+        btnGraficarHiperbola = new javax.swing.JButton();
         jPanel6 = new javax.swing.JPanel();
+        lblEcuacionRecta3 = new javax.swing.JLabel();
+        lblY3 = new javax.swing.JLabel();
+        txtBSen = new javax.swing.JTextField();
+        btnGraficarSen = new javax.swing.JButton();
+        txtCSen = new javax.swing.JTextField();
+        jLabel8 = new javax.swing.JLabel();
+        jLabel9 = new javax.swing.JLabel();
+        txtASen = new javax.swing.JTextField();
+        lblY4 = new javax.swing.JLabel();
         jPanel8 = new javax.swing.JPanel();
 
         org.openide.awt.Mnemonics.setLocalizedText(lblTitulo, org.openide.util.NbBundle.getMessage(PrincipalTopComponent.class, "PrincipalTopComponent.lblTitulo.text")); // NOI18N
@@ -225,28 +241,146 @@ public final class PrincipalTopComponent extends TopComponent {
 
         jTabbedPane1.addTab(org.openide.util.NbBundle.getMessage(PrincipalTopComponent.class, "PrincipalTopComponent.jPanel3.TabConstraints.tabTitle"), jPanel3); // NOI18N
 
+        txtAHiperbola.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txtAHiperbola.setText(org.openide.util.NbBundle.getMessage(PrincipalTopComponent.class, "PrincipalTopComponent.txtAHiperbola.text")); // NOI18N
+
+        lblEcuacionRecta2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        org.openide.awt.Mnemonics.setLocalizedText(lblEcuacionRecta2, org.openide.util.NbBundle.getMessage(PrincipalTopComponent.class, "PrincipalTopComponent.lblEcuacionRecta2.text")); // NOI18N
+
+        lblY2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        org.openide.awt.Mnemonics.setLocalizedText(lblY2, org.openide.util.NbBundle.getMessage(PrincipalTopComponent.class, "PrincipalTopComponent.lblY2.text")); // NOI18N
+
+        txtBHiperbola.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txtBHiperbola.setText(org.openide.util.NbBundle.getMessage(PrincipalTopComponent.class, "PrincipalTopComponent.txtBHiperbola.text")); // NOI18N
+
+        jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        org.openide.awt.Mnemonics.setLocalizedText(jLabel5, org.openide.util.NbBundle.getMessage(PrincipalTopComponent.class, "PrincipalTopComponent.jLabel5.text")); // NOI18N
+
+        jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        org.openide.awt.Mnemonics.setLocalizedText(jLabel7, org.openide.util.NbBundle.getMessage(PrincipalTopComponent.class, "PrincipalTopComponent.jLabel7.text")); // NOI18N
+
+        org.openide.awt.Mnemonics.setLocalizedText(btnGraficarHiperbola, org.openide.util.NbBundle.getMessage(PrincipalTopComponent.class, "PrincipalTopComponent.btnGraficarHiperbola.text")); // NOI18N
+        btnGraficarHiperbola.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnGraficarHiperbolaActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
         jPanel4Layout.setHorizontalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 339, Short.MAX_VALUE)
+            .addComponent(lblEcuacionRecta2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 339, Short.MAX_VALUE)
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addGap(98, 98, 98)
+                        .addComponent(lblY2)
+                        .addGap(4, 4, 4)
+                        .addComponent(txtAHiperbola, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel5)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(txtBHiperbola, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel7))
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addGap(124, 124, 124)
+                        .addComponent(btnGraficarHiperbola, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 565, Short.MAX_VALUE)
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addContainerGap(33, Short.MAX_VALUE)
+                .addComponent(lblEcuacionRecta2)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
+                    .addComponent(lblY2)
+                    .addComponent(txtAHiperbola, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel5)
+                    .addComponent(txtBHiperbola, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel7))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(btnGraficarHiperbola)
+                .addGap(463, 463, 463))
         );
 
         jTabbedPane1.addTab(org.openide.util.NbBundle.getMessage(PrincipalTopComponent.class, "PrincipalTopComponent.jPanel4.TabConstraints.tabTitle"), jPanel4); // NOI18N
+
+        lblEcuacionRecta3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        org.openide.awt.Mnemonics.setLocalizedText(lblEcuacionRecta3, org.openide.util.NbBundle.getMessage(PrincipalTopComponent.class, "PrincipalTopComponent.lblEcuacionRecta3.text")); // NOI18N
+
+        lblY3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        org.openide.awt.Mnemonics.setLocalizedText(lblY3, org.openide.util.NbBundle.getMessage(PrincipalTopComponent.class, "PrincipalTopComponent.lblY3.text")); // NOI18N
+
+        txtBSen.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txtBSen.setText(org.openide.util.NbBundle.getMessage(PrincipalTopComponent.class, "PrincipalTopComponent.txtBSen.text")); // NOI18N
+
+        org.openide.awt.Mnemonics.setLocalizedText(btnGraficarSen, org.openide.util.NbBundle.getMessage(PrincipalTopComponent.class, "PrincipalTopComponent.btnGraficarSen.text")); // NOI18N
+        btnGraficarSen.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnGraficarSenActionPerformed(evt);
+            }
+        });
+
+        txtCSen.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txtCSen.setText(org.openide.util.NbBundle.getMessage(PrincipalTopComponent.class, "PrincipalTopComponent.txtCSen.text")); // NOI18N
+
+        jLabel8.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        org.openide.awt.Mnemonics.setLocalizedText(jLabel8, org.openide.util.NbBundle.getMessage(PrincipalTopComponent.class, "PrincipalTopComponent.jLabel8.text")); // NOI18N
+
+        jLabel9.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        org.openide.awt.Mnemonics.setLocalizedText(jLabel9, org.openide.util.NbBundle.getMessage(PrincipalTopComponent.class, "PrincipalTopComponent.jLabel9.text")); // NOI18N
+
+        txtASen.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        txtASen.setText(org.openide.util.NbBundle.getMessage(PrincipalTopComponent.class, "PrincipalTopComponent.txtASen.text")); // NOI18N
+
+        lblY4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        org.openide.awt.Mnemonics.setLocalizedText(lblY4, org.openide.util.NbBundle.getMessage(PrincipalTopComponent.class, "PrincipalTopComponent.lblY4.text")); // NOI18N
 
         javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
         jPanel6.setLayout(jPanel6Layout);
         jPanel6Layout.setHorizontalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 339, Short.MAX_VALUE)
+            .addComponent(lblEcuacionRecta3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 339, Short.MAX_VALUE)
+            .addGroup(jPanel6Layout.createSequentialGroup()
+                .addGap(78, 78, 78)
+                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(btnGraficarSen, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanel6Layout.createSequentialGroup()
+                        .addComponent(lblY4)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(txtASen, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(lblY3)
+                        .addGap(4, 4, 4)
+                        .addComponent(txtBSen, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel8)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(txtCSen, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(6, 6, 6)
+                .addComponent(jLabel9)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel6Layout.setVerticalGroup(
             jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 565, Short.MAX_VALUE)
+            .addGroup(jPanel6Layout.createSequentialGroup()
+                .addContainerGap(33, Short.MAX_VALUE)
+                .addComponent(lblEcuacionRecta3)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.CENTER)
+                    .addComponent(lblY3)
+                    .addComponent(txtBSen, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel8)
+                    .addComponent(txtCSen, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel9)
+                    .addComponent(txtASen, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblY4))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(btnGraficarSen)
+                .addGap(463, 463, 463))
         );
 
         jTabbedPane1.addTab(org.openide.util.NbBundle.getMessage(PrincipalTopComponent.class, "PrincipalTopComponent.jPanel6.TabConstraints.tabTitle"), jPanel6); // NOI18N
@@ -307,12 +441,11 @@ public final class PrincipalTopComponent extends TopComponent {
             parabola.a = a;
             parabola.b = b;
             parabola.c = c;
-            
+                                
             PanelGrafica.add(parabola);
-            
-            parabola.repaint();
             PanelGrafica.updateUI();
             repaint();
+            
         } catch (NumberFormatException e){
             JOptionPane.showMessageDialog(null, "Ingresa un número válido.");
         }
@@ -329,9 +462,8 @@ public final class PrincipalTopComponent extends TopComponent {
 
             recta.a = a;
             recta.b = b;
+            
             PanelGrafica.add(recta);
-
-            recta.repaint();
             PanelGrafica.updateUI();
             repaint();
         } catch (NumberFormatException e){
@@ -339,16 +471,66 @@ public final class PrincipalTopComponent extends TopComponent {
         }
     }//GEN-LAST:event_btnGraficarRectaActionPerformed
 
+    private void btnGraficarHiperbolaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGraficarHiperbolaActionPerformed
+        // TODO add your handling code here:
+        
+        try{
+            PanelGrafica.removeAll();
+            
+            float a = Float.parseFloat(txtAHiperbola.getText());
+            float b = Float.parseFloat(txtBHiperbola.getText());
+
+            hiperbola.a = a;
+            hiperbola.b = b;
+            
+            PanelGrafica.add(hiperbola);
+            PanelGrafica.updateUI();
+            repaint();
+            
+        } catch (NumberFormatException e){
+            JOptionPane.showMessageDialog(null, "Ingresa un número válido.");
+        }
+    }//GEN-LAST:event_btnGraficarHiperbolaActionPerformed
+
+    private void btnGraficarSenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGraficarSenActionPerformed
+        // TODO add your handling code here:
+        
+        try{
+            PanelGrafica.removeAll();
+            
+            float a = Float.parseFloat(txtASen.getText());
+            float b = Float.parseFloat(txtBSen.getText());
+            float c = Float.parseFloat(txtCSen.getText());
+            
+            seno.a = a;
+            seno.b = b;
+            seno.c = c;
+            
+            PanelGrafica.add(seno);
+            PanelGrafica.updateUI();
+            repaint();
+            
+        } catch (NumberFormatException e){
+            JOptionPane.showMessageDialog(null, "Ingresa un número válido.");
+        }
+    }//GEN-LAST:event_btnGraficarSenActionPerformed
+
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel PanelGrafica;
+    private javax.swing.JButton btnGraficarHiperbola;
     private javax.swing.JButton btnGraficarParabola;
     private javax.swing.JButton btnGraficarRecta;
+    private javax.swing.JButton btnGraficarSen;
     private javax.swing.JPanel contenedorEcuaciones;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
@@ -357,11 +539,21 @@ public final class PrincipalTopComponent extends TopComponent {
     private javax.swing.JTabbedPane jTabbedPane1;
     private javax.swing.JLabel lblEcuacionRecta;
     private javax.swing.JLabel lblEcuacionRecta1;
+    private javax.swing.JLabel lblEcuacionRecta2;
+    private javax.swing.JLabel lblEcuacionRecta3;
     private javax.swing.JLabel lblTitulo;
     private javax.swing.JLabel lblY;
     private javax.swing.JLabel lblY1;
+    private javax.swing.JLabel lblY2;
+    private javax.swing.JLabel lblY3;
+    private javax.swing.JLabel lblY4;
     private javax.swing.JTextField txtA;
+    private javax.swing.JTextField txtAHiperbola;
+    private javax.swing.JTextField txtASen;
     private javax.swing.JTextField txtB;
+    private javax.swing.JTextField txtBHiperbola;
+    private javax.swing.JTextField txtBSen;
+    private javax.swing.JTextField txtCSen;
     private javax.swing.JTextField txtParabolaA;
     private javax.swing.JTextField txtParabolaB;
     private javax.swing.JTextField txtParabolaC;

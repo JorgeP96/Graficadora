@@ -2,7 +2,7 @@ package org.unitec;
 
 import java.awt.*;
 
-public class Recta extends Canvas{
+public class Hiperbola extends Canvas{
 
     public static float a;
     public static float b;    
@@ -38,7 +38,6 @@ public class Recta extends Canvas{
         float yP2;
         
         //Multiplicamos por 30 para mover la recta en 1 cm por 30 pixeles
-        a *= 30;
         b *= 30;
         
         //Graficamos la cuadricula y la recta
@@ -90,17 +89,23 @@ public class Recta extends Canvas{
             }
         }
         
+        float mitad = getWidth()/2 + (-getWidth()/2);
+        //System.out.println(a);
+        
         for(int i = 0; i < getWidth(); i++){
             //Se hace la gráfica si alguno de los valores es diferente de 0
             if(a != 0 || b != 0){
                 //Sustituyendo en el primer punto la ecuación
-                yP1 = -(a * xP1 + b)/30;
-
+                yP1 = -(1 / (a *(float)(Math.pow(xP1/30, 2))))*30 - b;
+                
+                System.out.println("x = " + xP1 + "\ny = " + (yP1));
+               
                 //Sustituyendo el segundo punto en la ecuación
-                yP2 = -(a * xP2 + b)/30;
+                yP2 = -(1 / (a *(float)(Math.pow(xP2/30, 2))))*30 - b;
                 
                 //Cambiamos color
                 g.setColor(Color.red);
+                
                 //Dibujamos la gráfica
                 g.drawLine((int)xP1, (int)yP1, (int)xP2, (int)yP2);
 
