@@ -96,15 +96,10 @@ public class Seno extends Canvas{
             //Se hace la gráfica si alguno de los valores es diferente de 0
             if(a != 0 || b != 0){
                 //Sustituyendo en el primer punto la ecuación
-                //yP1 = a *(float)Math.sin(b * xP1);
-                //yP1 = -(a *(float)Math.sin(Math.toRadians((xP1*b)))) - c;
-                //Sustituyendo el segundo punto en la ecuación
-                //yP2 = -(a *(float)Math.sin(Math.toRadians((xP2*b)))) - c;
-                
-                
                 yP1 = -(a *(float)Math.sin(Math.toRadians((xP1/15)*b))) - c;
-                yP2 = -(a *(float)Math.sin(Math.toRadians((xP2/15)*b))) - c;
-                
+                                
+                //Sustituyendo el segundo punto en la ecuación                
+                yP2 = -(a *(float)Math.sin(Math.toRadians((xP2/15)*b))) - c; 
                 
                 //Cambiamos color
                 g.setColor(Color.red);
